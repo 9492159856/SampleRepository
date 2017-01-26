@@ -2,6 +2,7 @@ package anu;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -19,9 +20,17 @@ public void test()
 {
 	d.get("https://www.irctc.co.in/eticketing/loginHome.jsf/");
     Assert.assertEquals("IRCTC Next Generation eTicketing System",d.getTitle());
-    d.findElement(By.xpath("//input[@id='demon_content']/div[2]/input")).click();
+    d.findElement(By.xpath("//*[@id='demon_content']/div[2]/input")).click();
     d.findElement(By.name("j_username")).sendKeys("selenium");
-	
+    d.findElement(By.id("loginbutton")).click();
+    Alert al=d.switchTo().alert();
+    al.accept();
+    d.findElement(By.name("j_password")).sendKeys("selenium");
+    d.findElement(By.name("submit")).click();
+	al.getText();
+	System.out.println("Test is:::::"+al.getText());
+	//al.accept();
+	al.dismiss();
 	
 }
 @BeforeMethod
@@ -34,6 +43,6 @@ public void setUp()
 @AfterMethod
 public void tearDown()
 {
-	//d.close();
+	d.close();
 }
 }

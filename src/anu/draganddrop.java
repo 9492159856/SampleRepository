@@ -34,6 +34,6 @@ a.dragAndDrop(ff,gg).perform();
 @AfterMethod
 public void teardown()
 {
-	d.quit();
+	d.close();
 	}
 }
