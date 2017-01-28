@@ -23,8 +23,8 @@ public void cde() throws Exception
 	d.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	d.findElement(By.linkText("Download")).click();
 	d.findElement(By.linkText("3.0.1")).click();
-
+    Thread.sleep(2000);
 	new ProcessBuilder("F:\\AutoIt3\\DownloadingFile.exe").start();
-	Thread.sleep(4000);
+	Thread.sleep(8000);
 }
 }

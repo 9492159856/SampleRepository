@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="anu.Windows">
+      <class name="seenium.DownloadingFileInAutoIt">
         <methods>
-          <include name="test"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
+          <include name="cde"/>
+          <include name="abc"/>
         </methods>
-      </class> <!-- anu.Windows -->
+      </class> <!-- seenium.DownloadingFileInAutoIt -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
